@@ -1,6 +1,6 @@
 {
   "name": "dubug-tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Debug Tool",
   "main": "src/debug.js",
   "directories": {
@@ -26,6 +26,8 @@
     "supertest": "^3.0.0"
   },
   "dependencies": {
-    "chalk": "^1.1.3"
+    "chai": "^3.5.0",
+    "chalk": "^1.1.3",
+    "mocha": "^3.2.0"
   }
 }
