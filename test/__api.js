@@ -67,5 +67,5 @@ module.exports = (express) => {
       res.status(200).json(data);
     });
   });
-  return router;
+  return router; 
 };
