@@ -9,10 +9,10 @@ module.exports = (express) => {
 // READ and Find All URLS----------------------------------------------------//
   router.get('/api/v1/url', (req, res) => {
     findAll((err) => {
-      fs.appendFileSync('./logs/log.log', 'Error: Someone tried to access all urls \n');
+      console.error('Error: Someone tried to access all urls \n');
       res.status(500).json(err);
     }, (data) => {
-      fs.appendFileSync('./logs/log.log', 'Success: Someone accessed all urls \n');
+      console.log('Success: Someone accessed all urls \n');
       res.status(200).json(data);
     });
   });
@@ -21,10 +21,10 @@ module.exports = (express) => {
   router.get('/api/v1/url/:id', (req, res) => {
     req.body.id = req.params.id;
     find(req.body, (err) => {
-      fs.appendFileSync('./logs/log.log', 'Error: Someone tried to access a single url \n');
+      console.error('Error: Someone tried to access a single url \n');
       res.status(500).json(err);
     }, (data) => {
-      fs.appendFileSync('./logs/log.log', 'Success: Someone accessed a single url \n');
+      console.log('Success: Someone accessed a single url \n');
       res.status(200).json(data);
     });
   });
@@ -35,10 +35,10 @@ module.exports = (express) => {
     const generate = require('../../util');
     req.body.shorturl = generate.returnStringGen();
     create(req.body, (err) => {
-      fs.appendFileSync('./logs/log.log', 'Error: Someone tried to generate a short url \n');
+      console.error('Error: Someone tried to generate a short url \n');
       res.status(500).json(err);
     }, (data) => {
-      fs.appendFileSync('./logs/log.log', 'Success: Someone generated a short url \n');
+      console.log('Success: Someone generated a short url \n');
       res.status(200).json(data);
     });
   });
@@ -48,10 +48,10 @@ module.exports = (express) => {
   router.post('/api/v1/url/:id', (req, res) => {
     req.body.id = req.params.id;
     update(req.body, (err) => {
-      fs.appendFileSync('./logs/log.log', 'Error: Someone tried to update a url \n');
+      console.error('Error: Someone tried to update a url \n');
       res.status(500).json(err);
     }, (data) => {
-      fs.appendFileSync('./logs/log.log', 'Success: Someone updated a url \n');
+      console.log('Success: Someone updated a url \n');
       res.status(200).json(data);
     });
   });
@@ -60,10 +60,10 @@ module.exports = (express) => {
   router.delete('/api/v1/url:id', (req, res) => {
     req.body.id = req.params.id;
     destroy(req.body, (err) => {
-      fs.appendFileSync('./logs/log.log', 'Error: Someone tried to delete a url \n');
+      console.error('Error: Someone tried to delete a url \n');
       res.status(500).json(err);
     }, (data) => {
-      fs.appendFileSync('./logs/log.log', 'Success: Someone deleted a url \n');
+      console.log;('Success: Someone deleted a url \n');
       res.status(200).json(data);
     });
   });
