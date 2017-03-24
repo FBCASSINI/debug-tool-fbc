@@ -2,7 +2,7 @@
   "name": "dubug-tool",
   "version": "1.0.1",
   "description": "Debug Tool",
-  "main": "./src/debug-tool.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
